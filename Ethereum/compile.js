@@ -10,7 +10,7 @@ const source = fs.readFileSync(compaignPath,'utf8');
 fs.ensureDirSync(buildPath);
 const output = solc.compile(source, 1).contracts;
 
-
+//console.log(output);
 for(let contract in output){
   fs.outputJsonSync(
     path.resolve(buildPath, contract.replace(':', '') + '.json'),
